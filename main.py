@@ -1,74 +1,12 @@
 """
-How to know if your cat type ?
+This Expert System can tell your cat's type based on some rules, the system takes user's requests
+and then perform some magic/matching to find out.
 
-Body :
-    Big
-    Medium
-Hair :
-    Long
-    Short
-    Unavailable
-Eye :
-    Sharp
-    Round
-Earlobe :
-    Wide
-    Small
-    Medium
-Neck :
-    Meduim
-    Short
-Leg : 
-    Short 
-    Meduim
-Nose:
-    Flat
-    Pointed
+engine.run() : runs the engine in real time.
+engine.declare() : passes requests to the engine aka adds a fact to the engine.
+engine.reset() : resets the engine.
 
-
-Rule 1 : 
-
-    Body Big and Hair Long and Eye Sharp and Neck Medium and Earlobe Wide and Leg Medium and Nose Pointed THEN : Maine Coon    
-
-Rule 2 : 
-
-    Body Big and Hair Long and Eye Sharp and Neck Short and Earlobe small and Leg Short and Nose Flat THEN : Persia Himalaya    
-
-
-Rule 3 : 
-
-    Body Big and Hair Long and Eye Round and Neck Short and Earlobe Small and Leg Short and Nose Flat THEN : Persia Peaknose 
-
-
-Rule 4 : 
-
-    Body Meduim and Hair Short and Eye Round and Neck Short and Earlobe Small and Leg Short and Nose Flat THEN : Exotic Shorthair 
-
-
-Rule 5 : 
-
-    Body Meduim and Hair Short and Eye Sharp and Neck Medium and Earlobe Medium and Leg Medium and Nose Pointed THEN : Russian Blue 
-
-
-Rule 6 : 
-
-    Body Medium and Hair Long and Eye Sharp and Neck Medium and Earlobe Wide and Leg Medium and Nose Pointed THEN : Anggora   
-
-
-Rule 7 : 
-
-    Body Medium and Hair Short and Eye Sharp and Neck Medium and Earlobe Meduim and Leg Medium and Nose Pointed THEN : Siamese   
-
-
-Rule 8 : 
-
-    Body Meduim and Hair Short and Eye Round and Neck Short and Earlobe Small and Leg Medium and Nose Flat THEN : Scotishfold   
-
-
-Rule 9 : 
-
-    Body Medium and Hair Unavailable and Eye Sharp and Neck Medium and Earlobe Wide and Leg Medium and Nose Pointed THEN : Sphynx   
-
+more info : https://experta.readthedocs.io/en/latest/thebasics.html
 
 """
 from experta import *
@@ -141,20 +79,24 @@ class CatEngine(KnowledgeEngine):
          
 
 
+def get_user_input(req):
+    """Avoid dups by taking user's requests in a sep function"""
+    
+    return input(req).strip().lower()
+
 
 def main_loop():
     """Taking Input from User"""
     
     print("Descibe Your Cat ...")
 
-       
-    body = input("Big or Meduim body ? ").strip().lower()
-    hair = input("Long or Short or no hair ? ").strip().lower()
-    eye = input("Sharp or Round eyes ? ").strip().lower()
-    neck = input("Short or Meduim neck ? ").strip().lower()
-    earlobe = input("Wide or Meduim or Small earlobe ? ").strip().lower()
-    leg = input("Short or Meduim legs ? ").strip().lower()
-    nose = input("Pointed or Flat nose ? ").strip().lower()
+    body = get_user_input("Big or Meduim body ? ")
+    hair = get_user_input("Long or Short or no hair ? ")
+    eye = get_user_input("Sharp or Round eyes ? ")
+    neck = get_user_input("Short or Meduim neck ? ")
+    earlobe = get_user_input("Wide or Meduim or Small earlobe ? ")
+    leg = get_user_input("Short or Meduim legs ? ")
+    nose = get_user_input("Pointed or Flat nose ? ")
 
     return body, hair, eye, earlobe, neck, nose, leg    
 
