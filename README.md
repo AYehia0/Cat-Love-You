@@ -98,5 +98,6 @@ Rule 9 :
 
     Body Medium and Hair Unavailable and Eye Sharp and Neck Medium and Earlobe Wide and Leg Medium and Nose Pointed THEN : Sphynx   
 
+### Refs
 
-
+[research gate](https://www.researchgate.net/publication/329401998_Expert_system_for_determining_the_type_of_cats_and_how_to_care_them#pf5)
