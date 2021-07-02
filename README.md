@@ -1,5 +1,8 @@
 # Do-You-Know-Your-Cat?
 
+
+![cat](cats/cat_argue.jpg)
+
 An very simple Expert System, to tell what type is your cat.
 
 
